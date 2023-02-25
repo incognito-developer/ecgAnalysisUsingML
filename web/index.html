@@ -1,0 +1,18 @@
+<html>
+    
+<head>
+    <title>CSV 파일 띄우기</title>
+</head>
+<body>
+    <h1>CSV 파일 띄우기</h1>
+    <table>
+        {% for row in csv_data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
