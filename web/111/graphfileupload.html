@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Csv File Upload</title>
+    <script>
+    function loadCsv(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var text = e.target.result;
+                var rows = text.split('\n');
+                var row_count = rows.length - 1;
+                var select = document.getElementById('row');
+                select.innerHTML = '';
+                for (var i = 0; i < row_count; i++) {
+                    var option = document.createElement('option');
+                    option.value = i;
+                    option.text = 'Row ' + i;
+                    select.appendChild(option);
+                }
+            };
+            reader.readAsText(input.files[0]);
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Graph!!</h1>
+    <form action="/graphresult" enctype="multipart/form-data" method="POST">
+        <label for="csvfile">CSV File:</label>
+        <input type="file" name="csvfile" accept=".csv" onchange="loadCsv(this)"><br>
+        <label for="row">Select Row:</label>
+        <select id="row" name="row"></select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
