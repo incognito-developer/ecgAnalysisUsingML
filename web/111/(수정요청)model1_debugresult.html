@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>model1 debug result</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accuracy</td>
+                <td>{{accuracy}}</td>
+            </tr>
+            <tr>
+                <td>Precision</td>
+                <td>{{precision}}</td>
+            </tr>
+            <tr>
+                <td>Recall</td>
+                <td>{{recall}}</td>
+            </tr>
+            <tr>
+                <td>F1-Score</td>
+                <td>{{f1}}</td>
+            </tr>
+            <tr>
+                <td>Cohen's Kappa</td>
+                <td>{{kappa}}</td>
+            </tr>
+            <tr>
+                <td>ROC AUC</td>
+                <td>{{auc}}</td>
+            </tr>
+            <tr>
+                <td>Matrix:</td>
+            </tr>
+            <tr>
+                <td>Predictive Values(positive, negative) </td>
+            </tr>	
+            <tr>
+                <td>Actual Values(positive, negative) </td>
+            </tr>
+            <tr>
+                <td>{{matrix_str}}</td>
+            </tr>
+        
+        </tbody>
+    </table>
+</body>
+</html>
