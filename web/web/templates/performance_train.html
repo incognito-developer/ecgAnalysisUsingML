@@ -1,0 +1,521 @@
+<html lang="en" class="h-100"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="static/demoJs.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+  
+  
+  
+    <!-- Jquery, loaded only on diagnosis page -->
+  
+  
+    <title>예측</title>
+  </head>
+  <body class="d-flex flex-column h-100 body" >
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#"><span class="fa fa-medkit"></span> 심전도 데이터 분석</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/selectmodel">예측</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/graphupload">파형</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/performance">성능지표</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <main role="main" class="flex-shrink-0" style="background:#7285a3">
+    <div class="container shadow rounded fadeIn p-5 my-5 bg-white" id="content">
+      <h2></h2>
+      <br>
+      <div class="container">
+  
+      </div>
+  
+  
+  
+  
+      <div class="container shadow rounded fadeIn p-5 my-5 bg-white" id="content3">
+        <h2>Train Result 성능지표를 확인해보세요.</h2>
+        <br>
+        <p><a class="btn btn-secondary" href="/performance_test" role="button">Test Result 성능지표 »</a></p>
+        <div class="container" >
+          <div class="album py-5" >
+              <div class="row row-cols-4" >
+                <div class="col-md-3 fadeInUp" >
+                  <div class="card mb-4 shadow">
+                    <div class="d-flex justify-content-center text-muted mt-4 icons">
+                      <span class="fa fa-flask fa-4x"></span>
+                    </div>
+                    <div class="card-body text-center" >
+                      <h4>ecgTrain
+                        BasicModel</h4>
+                      <p><div class="text1">
+                      <p>accuracy: 0.963871</p>
+                      <p>Precision: 0.975543</p>
+                      <p>Recall: 0.951624</p>
+                      <p>F1 score: 0.963435</p>
+                      <p>Cohens kappa:0.927743</p>
+                      <p>ROC AUC: 0.963875</p>
+                      <p>matrix:</p>
+                      <b>Predictive Values</b>
+                      <p> positive, negative</p>
+                      <p>positive      [1472  36]</p>
+                      <p>negative       [73 1436 ]</p>
+                      <p>Actual Values</p>
+                    </div></p>
+  
+                    </div>
+                  </div></div>
+                <div class="col-md-3 fadeInUp first">
+                  <div class="card mb-4 shadow" >
+                    <div class="d-flex justify-content-center text-muted mt-4  icons">
+                      <span class="fa fa-bar-chart fa-4x"></span>
+                    </div>
+                    <div class="card-body text-center">
+                      <h4>ecgTrain
+                        DropoutModel</h4>
+                      <p><div class="text1">
+                      <p>accuracy: 0.969838</p>
+                      <p>Precision: 0.973930</p>
+                      <p>Recall: 0.965540</p>
+                      <p>F1 score: 0.969717</p>
+                      <p>Cohens kappa: 0.939675</p>
+                      <p>ROC AUC: 0.969839</p>
+                      <p>matrix:</p>
+                      <b>Predictive Values</b>
+                      <p> positive, negative</p>
+                      <p>(positive,      [1469  39 ]</p>
+                      <p>negative)       [52   1457]</p>
+                      <p>Actual Values</p>
+                    </div></p>
+  <!--                    <p><a class="btn btn-secondary" href="" role="button">성능지표 확인 »</a></p>-->
+                    </div>
+                  </div></div>
+                <div class="col-md-3 fadeInUp second">
+                  <div class="card mb-4 shadow" >
+                    <div class="d-flex justify-content-center text-muted mt-4 icons">
+                      <span class="fa fa-file-text-o fa-4x"></span>
+                    </div>
+                    <div class="card-body text-center">
+                      <h4>ecgTrain
+                        Transformer</h4>
+                      <p><div class="text1">
+                      <p>accuracy: 0.952933</p>
+                      <p>Precision: 0.975627</p>
+                      <p>Recall: 0.929045</p>
+                      <p>F1 score: 0.951766</p>
+                      <p>Cohens kappa: 0.905865</p>
+                      <p>ROC AUC: 0.952925</p>
+                      <p>matrix:</p>
+                      <b>Predictive Values</b>
+                      <p> positive, negative</p>
+                      <p>(positive,      [1474  35 ]</p>
+                      <p>negative)       [107  1401]</p>
+                      <p>Actual Values</p>
+                    </div></p>
+  <!--                    <p><a class="btn btn-secondary" href="" role="button">성능지표 확인 »</a></p>-->
+                    </div>
+                  </div></div>
+                <div class="col-md-3 fadeInUp third">
+                  <div class="card mb-4 shadow" >
+                    <div class="d-flex justify-content-center text-muted mt-4 icons">
+                      <span class="fa fa-file-text-o fa-4x"></span>
+                    </div>
+  
+                    <div class="card-body text-center">
+                      <h4>ecgTrain
+                        Essemble</h4>
+                      <p><div class="text1">
+                      <p>accuracy: 0.973095</p>
+                      <p>Precision: 0.894281</p>
+                      <p>Recall: 0.957075</p>
+                      <p>F1 score: 0.924613</p>
+                      <p>Cohens kappa: 0.908261</p>
+                      <p>ROC AUC: 0.966753</p>
+                      <p>matrix:</p>
+                      <b>Predictive Values</b>
+                      <p> positive, negative</p>
+                      <p>(positive,        [17691  427 ]</p>
+                      <p>negative)       [162   3612 ]</p>
+                      <p>Actual Values</p>
+                    </div></p>
+  <!--                    <p><a class="btn btn-secondary" href="" role="button">성능지표 확인 »</a></p>-->
+                    </div>
+                  </div></div>
+  
+              </div>
+            </div>
+          </div>
+  
+        <div class="container">
+          <div style="display: flex" >
+            <p><a class="btn btn-secondary" onclick="doAction()"  role="button" style="margin-right: 20px">Acurracy »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'Accuracy Chart',
+                      data: [0.963871, 0.969838, 0.952933, 0.973095],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          stepSize:0.01
+                        }
+                      }]
+                    }
+                  }
+                })
+              }
+            </script>
+            <p><a class="btn btn-secondary" onclick="doAction2()" role="button" style="margin-right: 20px">Precision »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction2(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'Precision Chart',
+                      data: [ 0.975543, 0.973930, 0.975627, 0.894281],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          stepSize: 0.01,
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+            </script>
+            <p><a class="btn btn-secondary" onclick="doAction3()" role="button" style="margin-right: 20px">Recall »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction3(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'Recall Chart',
+                      data: [0.951624, 0.965540, 0.929045, 0.957075],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+            </script>
+            <p><a class="btn btn-secondary" onclick="doAction4()" role="button" style="margin-right: 20px">F1 Score »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction4(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'F1 score Chart',
+                      data: [0.963435, 0.969717, 0.951766, 0.924613],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+            </script>
+            <p><a class="btn btn-secondary" onclick="doAction5()" role="button" style="margin-right: 20px">Cohens kappa »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction5(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'Cohens kappa Chart',
+                      data: [0.927743, 0.939675,0.905865, 0.908261],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+            </script>
+            <p><a class="btn btn-secondary" onclick="doAction6()" role="button" style="margin-right: 20px">ROC AUC »</a></p>
+            <script>
+              // Declare chart object outside the function to store the chart object
+              var myChart;
+  
+              function doAction6(){
+                // Remove existing chart if it exists
+                if (myChart) {
+                  myChart.destroy();
+                }
+                var ctx = document.getElementById('myChart');
+                myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: ['BasicModel', 'DropoutModel', 'Transformer', 'Essemble'],
+                    datasets: [{
+                      barThickness: 10,
+                      label: 'ROC AUC Chart',
+                      data: [0.963875, 0.969839, 0.952925, 0.966753],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      yAxes: [{
+                        ticks: {
+                          beginAtZero: true
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+            </script>
+          </div>
+          <canvas id="myChart"></canvas>
+  
+  
+        </div>
+        </div>
+  
+  
+        <br>
+  
+  
+      </div>
+  
+  
+  
+  
+  
+  </main>
+  
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div>
+          <span class="text-white small">양성렬,윤주원,문세은,유용욱 1차 데모발표</span>
+        </div>
+        <div class>
+          <a class="text-white text-decoration-none small" href="https://github.com/incognito-developer/ecgAnalysisUsingML">View the source on Github <i class="fa fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  
+  </body></html>
