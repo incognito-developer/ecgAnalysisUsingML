@@ -22,5 +22,5 @@ The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/hea
 기타 문의사항이나 문제는 issues에 남겨주세요.</br>
 Please leave a message if you have any questions or problem.
 
-#training and test model source code
+# training and test model source code
 https://github.com/incognito-developer/ECGanalysis/tree/main
