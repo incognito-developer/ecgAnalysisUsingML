@@ -5,6 +5,11 @@ To Analysis ECG data With Machine Learning
 This project are under developing.
 
 
+모델 학습 및 검증 코드는 다른 프로젝트에 정리해두었습니다. 가장 하단의 링크를 참고바랍니다.</br>
+The model training and validation code has been put together in another project. Please refer to the link at the bottom.
+
+
+
 목적: 웹페이지를 통해 성능지표와 모델별 데이터 예측을 쉽게 할 수 있습니다.</br>
 Purpose: You can easily predict performance indicators and model-specific data through a web page.
 
