@@ -158,7 +158,7 @@ def model2_result():
         normal_result = prediction_results[3]
         abnormal_result = prediction_results[4]
         total_count = len(prediction_results1)    
-        return render_template('model1_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)     
+        return render_template('model2_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)     
      
 @app.route('/model2/debugresult',methods=['GET','POST'])
 def model2_debugresult():
@@ -200,7 +200,7 @@ def model3_result():
         normal_result = prediction_results[3]
         abnormal_result = prediction_results[4]
         total_count = len(prediction_results1)    
-        return render_template('model1_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)    
+        return render_template('model3_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)    
      
 @app.route('/model3/debugresult',methods=['GET','POST'])
 def model3_debugresult():
@@ -242,7 +242,7 @@ def model4_result():
         normal_result = prediction_results[3]
         abnormal_result = prediction_results[4]
         total_count = len(prediction_results1)    
-        return render_template('model1_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)     
+        return render_template('model4_result.html',prediction_results=prediction_results1,normal_count= normal_count, abnormal_count=abnormal_count,normal_result=normal_result,abnormal_result=abnormal_result,total_count=total_count)     
                
      
 @app.route('/model4/debugresult',methods=['GET','POST'])
