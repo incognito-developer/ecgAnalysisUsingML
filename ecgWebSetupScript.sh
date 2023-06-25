@@ -1,47 +1,65 @@
 #!/bin/bash
+#bash --version
+
+if ps -f $$ | awk '{print $9}' | grep "bash"
+then
+   bash --version
+else
+    echo "Please run on bash shell!"
+    ps -f $$
+    echo "usage: bash filename.sh"
+    exit 0
+fi
+   
 
 projectDirectory=ecgWebAnalysisUsingML
+echo "current PWD: " ${PWD}
 echo "current Path: " ${PATH}
 
-echo "Check the directory exists!!\n"
-if [[ -d ${projectDirectory} ]]
+echo -e "\n\n"
+
+echo -e "###Check the directory exists!!###\n"
+if [ -d ${projectDirectory} ]
 then
-    echo -e ${projectDirectory} "already exists!! Do you want to remove and download again?\n(input \"yes\" to yes or input anything to no)> "
-    read answer
-    if [[ ${answer} -eq "yes" ]]
+    echo "###" ${projectDirectory} "already exists!! Do you want to remove and download again?###"
+    read -t 10 -p "(input \"yes\" to yes or wait 10 seconds)> " answer
+    if [ ${answer} = "yes" ]
     then
-	echo "remove " ${HOME}/${projectDirectory}
+	echo -e "\n\n###remove " ${HOME}/${projectDirectory} "###"
 	rm -rf ${projectDirectory}
-	echo -e "Download the github repository!!\n"
+	echo -e "\n\n###Download the github repository!!###\n"
 	git clone https://github.com/incognito-developer/ecgAnalysisUsingML.git ${projectDirectory}
 
     else
-	echo "pass remove directory and not download!!"
+	echo -e "\n\n###pass remove directory and not download!!###\n\n"
     fi
 
 else
-    echo "Download the github repository!!\n"
+    echo -e "\n\n###Download the github repository!!###\n"
     git clone https://github.com/incognito-developer/ecgAnalysisUsingML.git ${projectDirectory}
 fi
 
 cd ${HOME}/${projectDirectory}
 
 
-echo -e "create conda environment!!\nenv name: \"ecgWebAnalysisUsingML\""
+echo -e "\n\n###create conda environment!!\nenv name: \"ecgWebAnalysisUsingML\"###"
 conda env create -f requirements.yaml
 
-echo "current Path: " ${PATH}
+
+echo -e "\n###current PWD: " ${PWD} "###"
+echo "###current Path: " ${PATH} "###"
 eval "$(conda shell.bash hook)"
 #source ${HOME}/.bashrc
 #source ${HOME}/anaconda3/etc/profile.d/conda.sh
 #echo "current Path: " ${PATH}
 
-echo "activate ecgWebAnalysisUsingML!!"
+echo -e "\n\n###activate ecgWebAnalysisUsingML!!###\n"
 #conda init bash
 conda activate ecgWebAnalysisUsingML
 
 cd ${HOME}/${projectDirectory}/web
-echo "current Path: " ${PATH}
+echo -e "\n\n###current PWD: " ${PWD} "###"
+echo "###current Path: " ${PATH} "###"
 
-echo "run gunicorn!!!"
+echo -e "\n\n###run gunicorn!!!###"
 gunicorn app:app
