@@ -57,7 +57,7 @@ echo -e "\n\n###activate ecgWebAnalysisUsingML!!###\n"
 #conda init bash
 conda activate ecgWebAnalysisUsingML
 
-cd ${HOME}/${projectDirectory}/web
+cd ${HOME}/${projectDirectory}/web/web
 echo -e "\n\n###current PWD: " ${PWD} "###"
 echo "###current Path: " ${PATH} "###"
 
