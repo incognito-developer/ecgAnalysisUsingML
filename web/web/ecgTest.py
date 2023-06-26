@@ -18,13 +18,13 @@ basePltSavePath = "./plots/"
 baseModelPath = "./models/"
 modelName="ecgTrainBasicModel.h5"
 batchsize=128"""
-gpuID = 2
+#gpuID = 2
 baseDatasetPath = "../dataset/"
 #basePltSavePath = "./plots/"
 baseModelPath = "models"
 modelName="ecgTrainBasicModel.h5"
 batchsize=128
-
+'''
 #to use gpu efficient
 #os.environ["CUDA_VISIBLE_DEVICES"]="2"
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -35,6 +35,7 @@ if gpus:
     except RuntimeError as e:
         # 프로그램 시작시에 메모리 증가가 설정되어야만 합니다
         print(e)
+'''
         
 def main(file1,file2,selectModel,debugMode=False, eraseLastColumn=False,ensemble = False):
     loadModel = list()
