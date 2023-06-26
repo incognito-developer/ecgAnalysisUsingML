@@ -472,5 +472,4 @@ dependencies:
       - termcolor==2.2.0
       - update==0.0.1
       - wtforms==3.0.1
-      - python-dateutil==2.8.2
 prefix: /home/account/anaconda3/envs/ecgWebAnalysisUsingML
