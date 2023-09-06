@@ -273,9 +273,7 @@ def per_test():
 @app.route('/performance_ptb')
 def per_ptb():
     return render_template('performance_ptb.html')
-@app.route('/test')
-def test1():
-    return render_template('test.html')
+
 
 if __name__ == '__main__':
     #app.secret_key = os.urandom(24)
