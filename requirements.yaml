@@ -86,4 +86,5 @@ dependencies:
       - urllib3==1.26.16
       - werkzeug==2.3.6
       - wrapt==1.14.1
+      - fastdtw==0.3.4
 prefix: /home/account/anaconda3/envs/ecgWebAnalysisUsingML
