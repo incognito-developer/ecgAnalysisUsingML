@@ -11,8 +11,12 @@ https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomatio
 This project has completed development.
 
 
-실행 방법은 아나콘다를 설치 한 후, ecgWebSetupScript.sh 파일만 다운로드 한 후 bash에서 실행하면 됩니다.</br>
-You can run this project. First, install Anaconda on your system. Second, only download "ecgWebSetupScript.sh". Third, please run script file on bash.
+실행 방법은 아나콘다를 설치 한 후, ecgWebSetupScript.sh 파일만 다운로드 한 후 bash에서 실행한 후, 웹 브라우저에서 `127.0.0.1:8000` 으로 접속하십시오.</br>
+You can run this project. First, install Anaconda on your system. Second, only download "ecgWebSetupScript.sh". Third, please run script file on bash. Fourth, open your web browser and connect `127.0.0.1`.
+
+
+모든 웹 서버 기능 사용을 원하시면 이 프로젝트와 nginx를 연동하시면 됩니다.</br>
+If you want to fully functions of web server, then you link nginx with this project.
 
 
 모델 학습 및 검증 코드는 다른 프로젝트에 정리해두었습니다. 가장 하단의 링크를 참고바랍니다.</br>
