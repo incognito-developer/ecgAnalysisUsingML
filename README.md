@@ -1,13 +1,16 @@
 # ecgAnalysisUsingML
 To Analysis ECG data With Machine Learning
 
-개발중인 프로젝트입니다.</br>
-This project are under developing.
+개발이 끝난 프로젝트입니다.</br>
+This project has completed development.
+
+
+실행 방법은 아나콘다를 설치 한 후, ecgWebSetupScript.sh 파일만 다운로드 한 후 bash에서 실행하면 됩니다.</br>
+You can run this project. First, install Anaconda on your system. Second, only download "ecgWebSetupScript.sh". Third, please run script file on bash.
 
 
 모델 학습 및 검증 코드는 다른 프로젝트에 정리해두었습니다. 가장 하단의 링크를 참고바랍니다.</br>
 The model training and validation code has been put together in another project. Please refer to the link at the bottom.
-
 
 
 목적: 웹페이지를 통해 성능지표와 모델별 데이터 예측을 쉽게 할 수 있습니다.</br>
