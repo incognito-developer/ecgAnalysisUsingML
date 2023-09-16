@@ -1,6 +1,12 @@
 # ecgAnalysisUsingML
 To Analysis ECG data With Machine Learning
 
+
+# project Informations
+https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomations
+
+
+
 개발이 끝난 프로젝트입니다.</br>
 This project has completed development.
 
