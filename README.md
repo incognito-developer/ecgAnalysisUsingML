@@ -41,7 +41,7 @@ The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/hea
 Please leave a message at github blog if you have any questions or problem.
 
 
-#Functions(기능)
+# Functions(기능)
 - model select
 - upload data and do predict, performance evaluation
 - show ECG waves via row numbers.
