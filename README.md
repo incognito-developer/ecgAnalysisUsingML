@@ -40,5 +40,15 @@ The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/hea
 기타 문의사항이나 문제는 깃허브 블로그에 남겨주세요.</br>
 Please leave a message at github blog if you have any questions or problem.
 
+
+#Functions(기능)
+- model select
+- upload data and do predict, performance evaluation
+- show ECG waves via row numbers.
+- show model's train and test infomations
+- compare each model's performance via table and graph
+- support responsive web(any smartphones, PC)
+- we are appologized that languages are shown only Koreans. please use web translator when you can't understand Korean.
+
 # training and test model source code
 https://github.com/incognito-developer/ECGanalysis/tree/main
