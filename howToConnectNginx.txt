@@ -1,0 +1,100 @@
+### notice! you must fix command to fit your machine! ###
+### ###needed to edit part### means needed to fix for your machine. ###
+### [emacs] is editor, so you can change for your convenient editor ###
+
+1. install nginx
+	[sudo apt install nginx]
+	
+2. [sudo emacs /etc/systemd/system/webproject.service]
+	and input this text....
+	
+======= copy and paste below ===================
+[Unit]
+Description=Gunicorn instance to serve webproject
+After=network.target
+
+[Service]
+User=account ### needed to edit part###
+Group=www-data
+
+
+
+### needed to edit part ###
+
+
+WorkingDirectory=/home/account/Downloads/web
+Environment="PATH=/home/account/anaconda3/envs/ecgWebAnalysisUsingML/bin/gunicorn"
+ExecStart=/home/account/anaconda3/envs/ecgWebAnalysisUsingML/bin/gunicorn --workers 3 --bind unix:webproject.sock -m 007 app:app --timeout 30000
+###needed to edit end. ####
+
+[Install]
+WantedBy=multi-user.target
+
+
+============ ended ====================
+
+
+3. [sudo systemctl start webproject]
+
+4. [sudo systemctl enable webproject]
+
+5. [sudo emacs /etc/nginx/sites-available/webproject]
+	and input this text....
+
+
+======= copy and paste below ===================
+server {
+    listen 80;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/account/Downloads/web/webproject.sock; ### needed to edit part ###
+	proxy_read_timeout 30000s;
+    }
+}
+============ ended ====================
+
+
+
+6. [sudo ln -s /etc/nginx/sites-available/webproject /etc/nginx/sites-enabled]
+
+7. [sudo nginx -t]
+
+8. [sudo systemctl restart nginx]
+
+9. [sudo ufw allow 'Nginx Full']
+
+
+
+
+##### if you have some problem while run web server... #####
+
+[tail -f /var/log/nginx/error.log]  #to see error log
+
+##### if sock file has problem? ######
+1. erase sock file.
+2. [sudo systemctl daemon-reload]
+3. [sudo systemctl restart webproject]
+4. [sudo systemctl status webproject]
+
+
+##### if you need to expand timeout value? #####
+nginx: [sudo emacs /etc/nginx/sites-available/webproject] and edit timeout value
+Gunicorn: [sudo emacs /etc/systemd/system/webproject.service] and edit timeout value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
