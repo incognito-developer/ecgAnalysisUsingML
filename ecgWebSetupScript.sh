@@ -13,20 +13,19 @@ fi
    
 
 projectDirectory=ecgWebAnalysisUsingML
-echo "current HOME: " ${HOME}
 echo "current PWD: " ${PWD}
 echo "current Path: " ${PATH}
 
 echo -e "\n\n"
 
 echo -e "###Check the directory exists!!###\n"
-if [[ -d ${projectDirectory} ]]
+if [ -d ${projectDirectory} ]
 then
     echo "###" ${projectDirectory} "already exists!! Do you want to remove and download again?###"
     read -t 10 -p "(input \"yes\" to yes or wait 10 seconds)> " answer
-    if [[ ${answer} = "yes" ]]
+    if [ ${answer} = "yes" ]
     then
-	echo -e "\n\n###remove " ${PWD}/${projectDirectory} "###"
+	echo -e "\n\n###remove " ${HOME}/${projectDirectory} "###"
 	rm -rf ${projectDirectory}
 	echo -e "\n\n###Download the github repository!!###\n"
 	git clone https://github.com/incognito-developer/ecgAnalysisUsingML.git ${projectDirectory}
@@ -40,11 +39,10 @@ else
     git clone https://github.com/incognito-developer/ecgAnalysisUsingML.git ${projectDirectory}
 fi
 
-echo -e "\n\n###cd " ${PWD}/${projectDirectory} "###\n\n"
-cd ${PWD}/${projectDirectory}
+cd ${HOME}/${projectDirectory}
 
 
-echo -e "\n\n###create conda environment!!###\n###env name: \"ecgWebAnalysisUsingML\"###"
+echo -e "\n\n###create conda environment!!\nenv name: \"ecgWebAnalysisUsingML\"###"
 conda env create -f requirements.yaml
 
 
@@ -59,8 +57,7 @@ echo -e "\n\n###activate ecgWebAnalysisUsingML!!###\n"
 #conda init bash
 conda activate ecgWebAnalysisUsingML
 
-echo -e "\n\n###cd " ${PWD}/web "###\n\n"
-cd ${PWD}/web
+cd ${HOME}/${projectDirectory}/web/web
 echo -e "\n\n###current PWD: " ${PWD} "###"
 echo "###current Path: " ${PATH} "###"
 
