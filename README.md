@@ -48,6 +48,8 @@ Please leave a message at github blog if you have any questions or problem.
 - show model's train and test infomations
 - compare each model's performance via table and graph
 - support responsive web(any smartphones, PC)
+- support tensorflow gpu and cpu mode.
+- support parallel computing, so you can run multi predict test as many as your pc edure(nginx necessory)
 - we are appologized that languages are shown only Koreans. please use web translator when you can't understand Korean.
 
 # training and test model source code
