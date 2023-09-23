@@ -29,16 +29,16 @@ Purpose: You can easily predict performance indicators and model-specific data t
 
 상업적 이용 금지. 이 프로젝트로 인해 발생한 문제점은 책임지지 않습니다.
 참고나 수정 시 원본 출처를 명확히 달아주십시오. 
-Issues에 이 프로젝트를 참고한 repository를 알려주시면 감사합니다.</br>
+Readme에 적혀있는 깃허브 블로그 주소에 이 프로젝트를 참고한 repository를 알려주시면 감사합니다.</br>
 No commercial use. We are not responsible for any problems caused by this project.
 When making references or modifications, please clearly indicate the original source.
-Thank you for letting us know the repository that referenced this project in Issues.
+Thank you for letting us know the repository that referenced this project in Github blog, which refered on top of this Readme file.
 
 이 프로젝트의 데이터셋은 https://www.kaggle.com/datasets/shayanfazeli/heartbeat 를 사용했습니다.</br>
 The dataset for this project is https://www.kaggle.com/datasets/shayanfazeli/heartbeat.
 
-기타 문의사항이나 문제는 issues에 남겨주세요.</br>
-Please leave a message at issues if you have any questions or problem.
+기타 문의사항이나 문제는 깃허브 블로그에 남겨주세요.</br>
+Please leave a message at github blog if you have any questions or problem.
 
 # training and test model source code
 https://github.com/incognito-developer/ECGanalysis/tree/main
