@@ -10,7 +10,7 @@ https://incognito-developer.github.io/posts/2023-07-16-aboutEcgPaperAndInfomatio
 개발이 끝난 프로젝트입니다.</br>
 This project has completed development.
 
-자세한 내용을 알고 싶으시면, `project paper*.pdf`를 읽어주십시오.
+자세한 내용을 알고 싶으시면, `project paper*.pdf`를 읽어주십시오.</br>
 If you want to know more detail, please read `project paper*.pdf`
 
 
